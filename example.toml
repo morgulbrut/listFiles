@@ -1,0 +1,12 @@
+paths = [
+    "/home/USERNAME/go",
+    "/usr/lib/go",
+    "/usr/share",
+]
+
+[[filters]]
+rgxp="(?i).*(USERNAME).*$"
+match=false
+[[filters]]
+rgxp="(?i).*\\.(go)$"
+match=true
