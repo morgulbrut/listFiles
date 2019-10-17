@@ -12,12 +12,12 @@ func DrawLogo() string {
 	var logo string
 
 	logo += "\n\n"
-	logo += color.StringRandom("  ██████╗ ██╗ █████╗  ██████╗ ██████╗  █████╗ ███╗   ███╗\n")
-	logo += color.StringRandom("  ██╔══██╗██║██╔══██╗██╔════╝ ██╔══██╗██╔══██╗████╗ ████║\n")
-	logo += color.StringRandom("  ██║  ██║██║███████║██║  ███╗██████╔╝███████║██╔████╔██║\n")
-	logo += color.StringRandom("  ██║  ██║██║██╔══██║██║   ██║██╔══██╗██╔══██║██║╚██╔╝██║\n")
-	logo += color.StringRandom("  ██████╔╝██║██║  ██║╚██████╔╝██║  ██║██║  ██║██║ ╚═╝ ██║\n")
-	logo += color.StringRandom("  ╚═════╝ ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝ " + Version + "\n\n")
+	logo += color.StringRandom("  ██╗    ██╗ █████╗██████╗██████╗██╗██╗    ██████╗ █████╗  \n")
+	logo += color.StringRandom("  ██║    ██║██╔═══╝  ██╔═╝██╔═══╝██║██║    ██╔═══╝██╔═══╝  \n")
+	logo += color.StringRandom("  ██║    ██║ █████╗  ██║  █████╗ ██║██║    █████╗  █████╗  \n")
+	logo += color.StringRandom("  ██║    ██║ ╚═══██╗ ██║  ██╔══╝ ██║██║    ██╔══╝  ╚═══██╗ \n")
+	logo += color.StringRandom("  ██████╗██║ █████╔╝ ██║  ██║    ██║██████╗██████╗ █████╔╝ \n")
+	logo += color.StringRandom("  ╚═════╝╚═╝ ╚════╝  ╚═╝  ╚═╝    ╚═╝╚═════╝╚═════╝ ╚════╝    " + Version + "\n\n")
 
 	return logo
 }
