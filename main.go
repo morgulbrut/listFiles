@@ -9,6 +9,7 @@ import (
 	"time"
 
 	"github.com/akamensky/argparse"
+	"github.com/homedepot/flop"
 	"github.com/morgulbrut/color"
 	"github.com/morgulbrut/listFiles/version"
 	"github.com/morgulbrut/toml"
@@ -49,6 +50,8 @@ func main() {
 	cf := parser.String("c", "config", &argparse.Options{Required: false, Help: "Path to config file", Default: "config.toml"})
 	out := parser.Flag("m", "markdown", &argparse.Options{Required: false, Help: "Export as markdown (default csv)"})
 	fn := parser.String("f", "filename", &argparse.Options{Required: false, Help: "Output file name without ending", Default: "files"})
+	cp := parser.Flag("", "copy", &argparse.Options{Required: false, Help: "Copy the collected files to one directory"})
+	cpd := parser.String("", "copydir", &argparse.Options{Required: false, Help: "Directory to copy the collected files to", Default: "."})
 
 	err := parser.Parse(os.Args)
 	if err != nil {
@@ -73,6 +76,12 @@ func main() {
 		color.Green("Writing: %s.csv", *fn)
 		exportCSV(d, *fn)
 	}
+
+	if *cp {
+		color.Green("Copying files")
+		copyFiles(d, *cpd)
+	}
+
 }
 
 func exportCSV(docs []doc, path string) {
@@ -102,6 +111,13 @@ func exportFile(data string, path string) {
 	}
 	f.WriteString(data)
 	f.Close()
+}
+
+func copyFiles(docs []doc, path string) {
+	for _, d := range docs {
+		color.Yellow("Copying %s -> %s", d.Path, path+"/"+d.Filename)
+		flop.SimpleCopy(d.Path, path+"/"+d.Filename)
+	}
 }
 
 func useFilter(docs []doc, f filter) []doc {

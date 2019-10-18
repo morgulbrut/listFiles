@@ -5,7 +5,7 @@ package version
 import "github.com/morgulbrut/listFiles/color"
 
 // Version number.
-const Version = "v1.0.0"
+const Version = "v1.0.1"
 
 // DrawLogo draws diagram logo.
 func DrawLogo() string {

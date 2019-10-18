@@ -1,5 +1,8 @@
 github.com/akamensky/argparse v0.0.0-20191006154803-1427fe674291 h1:EQ9p1v9+urDzbGQfAcBf9fGuDtYqFNE7YJHZ54TWPTk=
 github.com/akamensky/argparse v0.0.0-20191006154803-1427fe674291/go.mod h1:pdh+2piXurh466J9tqIqq39/9GO2Y8nZt6Cxzu18T9A=
+github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
+github.com/homedepot/flop v0.1.5 h1:aRFihwsh8dC+yX7qwkMnKHSg5YBK3gNXaO6tYUkfQFc=
+github.com/homedepot/flop v0.1.5/go.mod h1:gdrVU4beaIkZpWXyAAnEKZVo7vMS4lFvWkg1SCk2VNw=
 github.com/mattn/go-colorable v0.1.4 h1:snbPLB8fVfU9iwbbo30TPtbLRzwWu6aJS6Xh4eaaviA=
 github.com/mattn/go-colorable v0.1.4/go.mod h1:U0ppj6V5qS13XJ6of8GYAs25YV2eR4EVcfRqFIhoBtE=
 github.com/mattn/go-isatty v0.0.8/go.mod h1:Iq45c/XA43vh69/j3iqttzPXn0bhXyGjM0Hdxcsrc5s=
@@ -9,5 +12,10 @@ github.com/morgulbrut/color v1.7.0 h1:/IQ9N8cRlrmsCVaGTDnoGVlxKJjyZtdWT/haP7Fc4l
 github.com/morgulbrut/color v1.7.0/go.mod h1:jdMUR/XC+F/D4CzluOp0IGWcbE5UsX7q92dEm/cpy8g=
 github.com/morgulbrut/toml v0.3.1 h1:GBRMeI4rb18J66r6XUrGzuFR9Z61VCXYA93WzUADcBM=
 github.com/morgulbrut/toml v0.3.1/go.mod h1:kL59cBSyIQC724d1G6MHy/6qUSflHpzIazERNLbFh/8=
+github.com/pkg/errors v0.8.1 h1:iURUrRGxPUNPdy5/HRSm+Yj6okJ6UtLINN0Q9M4+h3I=
+github.com/pkg/errors v0.8.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
+github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
+github.com/rs/zerolog v1.11.0/go.mod h1:YbFCdg8HfsridGWAh22vktObvhZbQsZXe4/zB0OKkWU=
+github.com/stretchr/testify v1.2.2/go.mod h1:a8OnRcib4nhh0OaRAV+Yts87kKdq0PP7pXfy6kDkUVs=
 golang.org/x/sys v0.0.0-20190222072716-a9d3bda3a223/go.mod h1:STP8DvDyc/dI5b8T5hshtkjS+E42TnysNCUPdjciGhY=
 golang.org/x/sys v0.0.0-20191008105621-543471e840be/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
