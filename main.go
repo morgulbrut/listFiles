@@ -114,9 +114,13 @@ func exportFile(data string, path string) {
 }
 
 func copyFiles(docs []doc, path string) {
+	options := flop.Options{
+		Backup:   "numbered",
+		MkdirAll: true,
+	}
 	for _, d := range docs {
 		color.Yellow("Copying %s -> %s", d.Path, path+"/"+d.Filename)
-		flop.SimpleCopy(d.Path, path+"/"+d.Filename)
+		flop.Copy(d.Path, path+"/"+d.Filename, options)
 	}
 }
 
