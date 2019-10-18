@@ -6,6 +6,7 @@ import (
 	"path/filepath"
 	"regexp"
 	"strings"
+	"time"
 
 	"github.com/akamensky/argparse"
 	"github.com/morgulbrut/color"
@@ -26,6 +27,8 @@ type config struct {
 type doc struct {
 	Path     string
 	Filename string
+	Date     time.Time
+	Size     int64
 }
 
 func readConfig(fn string) config {
@@ -74,19 +77,19 @@ func main() {
 
 func exportCSV(docs []doc, path string) {
 	var sb strings.Builder
-	sb.WriteString("File, Path\n")
+	sb.WriteString("File, Path, Size, Mod.time\n")
 	for _, d := range docs {
-		sb.WriteString(fmt.Sprintf("%s, %s\n", d.Filename, d.Path))
+		sb.WriteString(fmt.Sprintf("%s, %s, %d, %v\n", d.Filename, d.Path, d.Size, d.Date.Format("2006-01-02 15:04:05")))
 	}
 	exportFile(sb.String(), path+".csv")
 }
 
 func exportMD(docs []doc, path string) {
 	var sb strings.Builder
-	sb.WriteString("| File | Path |\n")
-	sb.WriteString("| ----- | ---- |\n")
+	sb.WriteString("| File | Path | Size | Mod.time\n")
+	sb.WriteString("| ----- | ---- |---- |---- |\n")
 	for _, d := range docs {
-		sb.WriteString(fmt.Sprintf("| %s | %s | \n", d.Filename, d.Path))
+		sb.WriteString(fmt.Sprintf("| %s | %s | %d | %v | \n", d.Filename, d.Path, d.Size, d.Date.Format("2006-01-02 15:04:05")))
 	}
 	exportFile(sb.String(), path+".md")
 }
@@ -121,7 +124,7 @@ func collect(root string) []doc {
 		if info.IsDir() {
 			return nil
 		}
-		docs = append(docs, doc{Path: path, Filename: info.Name()})
+		docs = append(docs, doc{Path: path, Filename: info.Name(), Date: info.ModTime(), Size: info.Size()})
 		return nil
 	})
 
